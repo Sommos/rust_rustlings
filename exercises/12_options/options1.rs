@@ -4,6 +4,13 @@
 // `hour_of_day` is higher than 23.
 fn maybe_icecream(hour_of_day: u16) -> Option<u16> {
     // TODO: Complete the function body.
+    if hour_of_day > 23 {
+        None
+    } else if hour_of_day < 22 {
+        Some(5)
+    } else {
+        Some(0)
+    }
 }
 
 fn main() {
@@ -19,6 +26,11 @@ mod tests {
         // TODO: Fix this test. How do you get the value contained in the
         // Option?
         let icecreams = maybe_icecream(12);
+
+        let icecreams = match icecreams {
+            Some(x) => x,
+            None => panic!("Expected Some(value), found"),
+        };
 
         assert_eq!(icecreams, 5); // Don't change this line.
     }
