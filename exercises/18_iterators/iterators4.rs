@@ -10,6 +10,12 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+    // match num {
+    //     0 => 1,
+    //     1 => 1,
+    //     _ => factorial(num - 1) * num,
+    // }
+    (1..=num).product()
 }
 
 fn main() {
@@ -29,6 +35,7 @@ mod tests {
     fn factorial_of_1() {
         assert_eq!(factorial(1), 1);
     }
+
     #[test]
     fn factorial_of_2() {
         assert_eq!(factorial(2), 2);
